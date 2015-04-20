@@ -2,6 +2,7 @@ describe('hashTable', function() {
   var hashTable;
   var people = [['Steven', 'Tyler'], ['George', 'Harrison'], ['Mr.', 'Doob'], ['Dr.', 'Sunshine'], ['John', 'Resig'], ['Brendan', 'Eich'], ['Alan', 'Turing']];
 
+  //  var people = [[['string1', 'string1'],['string2', 'string2']],          [[],[]];
 
   beforeEach(function() {
     hashTable = new HashTable();
@@ -24,10 +25,13 @@ describe('hashTable', function() {
   });
 
   it('should not contain values that were removed', function() {
+    debugger;
     hashTable.insert('Steven', 'Tyler');
     hashTable.remove('Steven');
     expect(hashTable.retrieve('Steven')).to.equal(null);
   });
+
+
 
   it('should handle hash function collisions', function(){
     var v1 = "val1";
